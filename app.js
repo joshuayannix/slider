@@ -35,8 +35,24 @@ const carousel = () => {
     counter = slides.length - 1
   }
 
+  // show and hide buttons
+
+  if(counter < slides.length - 1){
+    nextBtn.style.display = 'block';
+  } else {
+    nextBtn.style.display = 'none';
+  }
+
+  if(counter > 0){
+    prevBtn.style.display = 'block';
+  } else {
+    prevBtn.style.display = 'none';
+  }
+
   // translate will move EVERY slide over to the left or right, depending on the counter
   slides.forEach(slide => {
     slide.style.transform = `translateX(-${counter * 100}%)`
   })
 }
+
+prevBtn.style.display = 'none';
